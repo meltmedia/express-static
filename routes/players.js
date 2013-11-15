@@ -9,7 +9,11 @@ module.exports = {
   },
 
   player : function(req, res) {
-    res.render('players/' + req.params.name, { title: 'Player: ' + req.params.name });
+    var name = req.params.name;
+    res.render('players/player/index', {
+      title: 'Player: ' + name,
+      name: name
+    });
   }
 
 };

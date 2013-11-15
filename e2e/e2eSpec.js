@@ -1,49 +1,37 @@
-/** A Sample Angular E2E test */
+/**
+ * Runs all end to end tests
+ */
 
-describe('My Sample App', function() {
+describe('My Sample Static Site', function() {
 
-  it('should let Angular do its work', function() {
+  it('should render the root', function() {
     browser().navigateTo('/');
-    //input('yourName').enter('A Pirate!');
     expect(element('title').text()).toBe("Express");
   });
 
-  it('should let Angular do its work2', function() {
+  it('should render /users', function() {
     browser().navigateTo('/users');
-    //input('yourName').enter('A Pirate!');
-    expect(element('title').text()).toBe("Users, Bitch");
+    expect(element('title').text()).toBe("Users");
   });
 
-  it('should players', function() {
+  it('should render /players', function() {
     browser().navigateTo('/players');
-    //input('yourName').enter('A Pirate!');
     expect(element('title').text()).toBe("Players");
   });
 
-  it('should player richard', function() {
+  it('should render /players/richard', function() {
     browser().navigateTo('/players/richard');
-    //input('yourName').enter('A Pirate!');
     expect(element('title').text()).toBe("Player: richard");
   });
 
-  it('should player jake', function() {
+  it('should player /players/jake', function() {
     browser().navigateTo('/players/jake');
-    //input('yourName').enter('A Pirate!');
     expect(element('title').text()).toBe("Player: jake");
   });
 
-  it('should try to fucking break', function() {
-
-    for (var i = 0; i < 20000; i++) {
-      browser().navigateTo('/items/' + i);
-    }
-
-    //input('yourName').enter('A Pirate!');
-//    expect(element('title').text()).toBe("Player: jake");
+  it('should player /players/guy', function() {
+    browser().navigateTo('/players/guy');
+    expect(element('title').text()).toBe("Player: guy");
   });
 
-  xit('should skip this e2e test', function() {
-    sleep(15);
-    browser().navigateTo('/index.html');
-  });
 });
