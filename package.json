@@ -1,7 +1,7 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
+  "name": "express-static",
+  "version": "0.1.0",
+  "private": false,
   "scripts": {
     "start": "node app.js"
   },
