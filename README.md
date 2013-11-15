@@ -24,5 +24,5 @@ npm start
 Currently, static files are generated via requests through the karma e2e tests. Any routes should be tested in karma e2e in order to be rendered statically.
 
 ```
-grunt s
+grunt dist
 ```

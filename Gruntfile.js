@@ -64,7 +64,7 @@ module.exports = function (grunt) {
   ]);
 
 
-  grunt.registerTask('s', [
+  grunt.registerTask('dist', [
     'develop',
     'clean',
     'mkdir:dist',
