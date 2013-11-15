@@ -12,7 +12,7 @@ var players = require('./routes/players');
 var items = require('./routes/items');
 var http = require('http');
 var path = require('path');
-var writer = require('./lib/middleware/writer');
+var writer = require('express-writer');
 
 var app = express();
 var server;
