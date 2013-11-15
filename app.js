@@ -1,5 +1,8 @@
 /**
- * Module dependencies.
+ * Setup and run our Express server
+ *
+ * This server is used during development and is not necessary for production
+ * once all static files have been rendered out
  */
 
 var express = require('express');
@@ -10,7 +13,6 @@ var items = require('./routes/items');
 var http = require('http');
 var path = require('path');
 var writer = require('./lib/middleware/writer');
-
 
 var app = express();
 var server;
@@ -28,26 +30,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
+
   app.use(express.errorHandler());
+
+// Our environment for static file rendering
 } else if ('dist' == app.get('env')) {
-  app.use(function(req, res, next) {
 
-    var _send = res.send;
+  app.use(writer.watch);
 
-    res.send = function() {
-
-      _send.apply(res, arguments);
-      writer(req, arguments[0]);
-
-    };
-
-    next();
-
-  });
 }
 
-
-//
+// Out static site's routes
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/items/:id', items.item);
