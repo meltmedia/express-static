@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>Express Static</title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><div class="container"><h1>Express Static</h1><p>Write an express app, output static files.</p>
+<p>If you want an existing implementation, we conviently made a <a href="https://github.com/meltmedia/generator-express-static">Yeoman generator</a> for you.</p>
+<pre><code>$ npm install -g generator-express-static
+</code></pre><h2 id="what-makes-an-express-static-project-">What makes an express-static project?</h2>
+<p>express-static is bascially an implementation of a few components that allow us to generate a static website
+while having the feeling of &quot;just writing an expressjs application. If you are asking yourself &quot;This doesn&#39;t really do much&quot;,
+then you are right on point with the goals of this project.</p>
+<p>We want you to have the feeling of freedom of just writing a dynamic web application, while still being able to pump
+a static site.</p>
+<h2 id="why-">Why?</h2>
+<p>At meltmedia, we write a lot of gigantic static websites. These projects quickly become too large for most static
+site generators. We do not need most of the features of the current availble options, and we wanted to make something
+we could mold to every project that may come up. Why write plugins when you can just use the thousands of node modules?</p>
+<p>If it works with express, it will have a really good chance of working with this project.</p>
+<h2 id="problems-this-project-solves">Problems this project solves</h2>
+<ul>
+<li>A lot of static site generators are a whole framework. We don&#39;t want that. We want you to choose the tools you need.</li>
+<li>A lot of static site generators do not scale to websites with hundreds of pages</li>
+</ul>
+<h4 id="the-three-major-components-are-">The three major components are:</h4>
+<p><img src="images/express-writer-drawing.png" alt="Alt text"></p>
+<p><a href="http://expressjs.com/">Express</a></p>
+<p>A web application framework for node</p>
+<p><a href="http://karma-runner.github.io/0.10/index.html">Karma e2e</a></p>
+<p>javascript test runner that we use to make requests to our express app.</p>
+<p><a href="https://github.com/rtorr/express-writer">express-writer</a></p>
+<p>A small piece of code that sits inside express&#39;s res.send function. It captures the route that was called, the body that would be sent to the browser, and writes that result to an html file.</p>
+<h2 id="contributing">Contributing</h2>
+<p>The more the better.</p>
+<h3 id="goals-of-the-project">Goals of the project</h3>
+<p>Keep as close to a basic Express application as possible. <strong>For example, we do not want to add every templating engine to our Yeoman project,
+because adding template support to express is pretty trivial</strong>. We want you to add what you need. In this sense, code examples
+and documentation are more important than features.</p>
+<h4 id="things-we-are-interested-in-">Things we are interested in?</h4>
+<ul>
+<li>We think that the karma test runner is pretty temporary, and want to make light layer for that</li>
+<li>Improve <a href="https://github.com/rtorr/express-writer">express-writer</a></li>
+<li>Fix bugs</li>
+<li>DOCUMENTATION</li>
+</ul>
+<p>Parts of this project</p>
+<ul>
+<li><a href="https://github.com/meltmedia/express-static">This site</a></li>
+<li><a href="https://github.com/meltmedia/generator-express-static">Yeoman generator</a></li>
+<li><a href="https://github.com/rtorr/express-writer">express-writer</a></li>
+</ul>
+</div></body></html>
