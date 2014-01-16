@@ -3,4 +3,4 @@ dist
 *.iml
 .DS_STORE
 node_modules
-
+public/bower_components
