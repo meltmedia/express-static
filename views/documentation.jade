@@ -1,0 +1,24 @@
+extends layout
+block content
+  div(class="container")
+    h1= title
+    :markdown
+      TODO
+
+      For now:
+
+      * take our [Yeoman generator](https://github.com/meltmedia/generator-express-static) and make
+      a basic express app.
+
+      ## Develop
+
+      * run `grunt watch`
+
+      ## Dist
+
+      * add your routes to the `e2e/e2eSpec.js` file (this is what hits the express app, cause it to generate pages
+      based on those routes)
+
+      * run `grunt dist`
+
+
