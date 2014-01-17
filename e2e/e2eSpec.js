@@ -6,7 +6,12 @@ describe('End to end tests for express-static', function() {
 
   it('should render the root', function() {
     browser().navigateTo('/');
-    expect(element('title').text()).toBe("Express Static");
+    expect(element('title').text()).toBe("About");
+  });
+
+  it('should render the documentation', function() {
+    browser().navigateTo('/documentation');
+    expect(element('title').text()).toBe("Documentation");
   });
 
 });
