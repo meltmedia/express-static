@@ -16,3 +16,26 @@ code {
   margin: 0 auto;
   width: 940px;
 }
+#header {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+#logo {
+  float: left;
+}
+.nav {
+  float: right;
+}
+.nav li {
+  display: inline-block;
+  float: left;
+  margin-left: 15px;
+}
+.nav li a {
+  line-height: 62px;
+  padding: 10px 20px;
+}
+.nav li.active a {
+  background: #f3f3f3;
+}

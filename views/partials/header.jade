@@ -1,0 +1,9 @@
+div(id="header", class="container")
+
+  div#logo
+   h1 Express Static
+
+  ul.nav
+    each item in mainNavigation.mainNavigation
+      li(class=(title===item.title ? 'active' : ''))
+        a(href=item.href)=item.title
