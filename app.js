@@ -7,12 +7,12 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
-var players = require('./routes/players');
-var items = require('./routes/items');
 var http = require('http');
 var path = require('path');
 var writer = require('express-writer');
+
+
+var stylus = require('stylus');
 
 var app = express();
 var server;
@@ -20,7 +20,19 @@ var server;
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
+
+
 app.set('view engine', 'jade');
+
+
+
+app.use(stylus.middleware({
+  src: __dirname + '/resources/',
+  dest: __dirname + '/public/',
+  debug: true,
+  force: true
+}));
+
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -42,10 +54,6 @@ if ('development' == app.get('env')) {
 
 // Out static site's routes
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/items/:id', items.item);
-app.get('/players', players.index);
-app.get('/players/:name', players.player);
 
 server = http.createServer(app);
 
