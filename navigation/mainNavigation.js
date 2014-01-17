@@ -5,7 +5,7 @@ exports.mainNavigation = [
       href: '/'
     },
     {
-      title: 'documentation',
+      title: 'Documentation',
       href: '/documentation'
     }
 ];

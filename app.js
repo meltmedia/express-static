@@ -6,10 +6,13 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
+
 var http = require('http');
 var path = require('path');
 var writer = require('express-writer');
+
+var route_index = require('./routes/index');
+var route_documentation = require('./routes/documentation');
 
 
 var stylus = require('stylus');
@@ -53,7 +56,8 @@ if ('development' == app.get('env')) {
 }
 
 // Out static site's routes
-app.get('/', routes.index);
+app.get('/', route_index.index);
+app.get('/documentation', route_documentation.index);
 
 server = http.createServer(app);
 
